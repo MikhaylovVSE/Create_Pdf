@@ -22,7 +22,7 @@ namespace pdf1
             var fileName = "test.pdf";
             using (var stream = new FileStream(fileName, FileMode.Create))
             {
-                var doc = new Document(PageSize.A4.Rotate());
+                var doc = new Document(PageSize.A4.Rotate(),10,10,10,10);
                 var writer = PdfWriter.GetInstance(doc, stream);
                 doc.Open();
 
