@@ -57,12 +57,12 @@ namespace pdf1
 
             foreach (var item in data.Items) 
             {
-                table.AddCell($"{item.Id}");
-                table.AddCell($"{item.Name}");
-                table.AddCell($"{item.CompanyCount}");
-                table.AddCell($"{item.DispName}");
-                table.AddCell($"{item.EmployeeName}");
-                table.AddCell($"{item.Description}");
+                table.AddCell(new Paragraph($"{item.Id}", font));
+                table.AddCell(new Paragraph($"{item.Name}", font));
+                table.AddCell(new Paragraph($"{item.CompanyCount}", font));
+                table.AddCell(new Paragraph($"{item.DispName}", font));
+                table.AddCell(new Paragraph($"{item.EmployeeName}", font));
+                table.AddCell(new Paragraph($"{item.Description}", font));
             }
             document.Add(table);
         }
