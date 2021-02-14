@@ -22,7 +22,7 @@ namespace pdf1
             var fileName = "test.pdf";
             using (var stream = new FileStream(fileName, FileMode.Create))
             {
-                var doc = new Document(PageSize.A4.Rotate(),15,15,15,15);
+                var doc = new Document(PageSize.A4.Rotate(), 15, 15, 15, 15);
                 var writer = PdfWriter.GetInstance(doc, stream);
                 doc.Open();
 
@@ -42,9 +42,9 @@ namespace pdf1
         ///Создание pdf-файла и его заполнение
         static void MakePdf(Document document, Report data)
         {
-            //string ttf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.ttf");
-            var baseFont = BaseFont.CreateFont("C:\\Windows\\Fonts\\arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            var font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
+            string ttf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.ttf");
+            BaseFont baseFont = BaseFont.CreateFont(ttf, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            Font font = new Font(baseFont, Font.DEFAULTSIZE, Font.NORMAL);
 
             var title = $"Hello from {data.From.ToShortDateString()} to {data.To.ToShortDateString()}";
             document.Add(new Paragraph(title, font));
@@ -55,7 +55,7 @@ namespace pdf1
             table.WidthPercentage = 100;
             table.SetWidths(new float[] { 0.07f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f });
 
-            foreach (var item in data.Items) 
+            foreach (var item in data.Items)
             {
                 table.AddCell($"{item.Id}");
                 table.AddCell($"{item.Name}");
