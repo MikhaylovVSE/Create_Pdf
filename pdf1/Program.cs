@@ -78,11 +78,11 @@ namespace pdf1
                     new Category()
                     {
                         Id = 1,
-                        Name = "ddd",
-                        CompanyCount = 80,
-                        DispName = "ttt",
-                        EmployeeName = "aaa",
-                        Description = "yyy"
+                        Name = "Вентиляция",
+                        CompanyCount = 10,
+                        DispName = "Родионов М.Е.",
+                        EmployeeName = "Тарбеев Д.И.",
+                        Description = "Шумит фанкойл"
                     },
                     new Category()
                     {
