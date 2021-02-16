@@ -53,7 +53,7 @@ namespace pdf1
             var table = new PdfPTable(6);
             table.SpacingBefore = 20;
             table.WidthPercentage = 100;
-            table.SetWidths(new float[] { 0.07f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f });
+            table.SetWidths(new float[] { 0.06f, 0.5f, 0.09f, 0.5f, 0.5f, 0.5f });
 
             foreach (var item in data.Items) 
             {
