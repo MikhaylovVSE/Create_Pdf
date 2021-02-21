@@ -6,6 +6,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            /*
+                Вводим целое положительное К.
+                Программа считает: 
+                    Сумму чисел от 1 до К
+                    Произведение чисел от 1 до К
+                    Определяет, К - простое число или нет (делится без остатка только на 1 и на себя)
+             */
+
             int amount = 0;
             int max = 0;
 
@@ -19,8 +27,12 @@ namespace ConsoleApp1
 
                 int number = Int32.Parse(input);
                 amount += number;
-                if (max < number)
+                if (max < number) {
                     max = number;
+                }
+
+
+                //вывод
             }
 
             Console.WriteLine($"Amount = {amount}, Max number = {max}");
