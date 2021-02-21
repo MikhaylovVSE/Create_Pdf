@@ -6,9 +6,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            /*
-                напечатать квалрат из звездочек заданного размера
-             */
+            int count = 0;
 
             while (true)
             {
@@ -19,17 +17,14 @@ namespace ConsoleApp1
                 }
 
                 int number = Int32.Parse(input);
-                for(int i = 0; i < number; i++)
+                if (number > 5)
                 {
-                    for (int j = 0; j < number; j++)
-                    {
-                        Console.Write("*");
-                    }
-                    Console.Write("\n");
+                    count++;
                 }
-                Console.Write("\n");
+            }
 
-            } 
+            Console.WriteLine($"Count = {count}, count * count = {count * count}");
+
         }
     }
 }
