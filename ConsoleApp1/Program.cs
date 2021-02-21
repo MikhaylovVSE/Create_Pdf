@@ -19,11 +19,16 @@ namespace ConsoleApp1
                 }
 
                 int number = Int32.Parse(input);
-                for(int i = 0; i < number ; i++)
+                for(int i = 0; i < number; i++)
                 {
-                    Console.Write("*");
+                    for (int j = 0; j < number; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.Write("\n");
                 }
                 Console.Write("\n");
+
             } 
         }
     }
