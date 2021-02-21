@@ -6,7 +6,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int count = 0;
+            int amount = 0;
+            int max = 0;
 
             while (true)
             {
@@ -17,13 +18,13 @@ namespace ConsoleApp1
                 }
 
                 int number = Int32.Parse(input);
-                if (number > 5)
-                {
-                    count++;
-                }
+                amount += number;
+                if (max < number)
+                    max = number;
             }
 
-            Console.WriteLine($"Count = {count}, count * count = {count * count}");
+            Console.WriteLine($"Amount = {amount}, Max number = {max}");
+            Console.ReadKey();
 
         }
     }
