@@ -6,6 +6,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            /*
+                напечатать квалрат из звездочек заданного размера
+             */
+
             while (true)
             {
                 Console.Write("input number >");
