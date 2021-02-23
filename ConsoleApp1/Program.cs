@@ -14,27 +14,31 @@ namespace ConsoleApp1
                     Определяет, К - простое число или нет (делится без остатка только на 1 и на себя)
              */
 
-            int sum = 0;
-            int multiple = 1;
-
             while (true)
             {
-                Console.Write("input number >");
+                
+                Console.Write("input делимое >");
                 string input = Console.ReadLine();
-                if (input == "q") {
+                Console.Write("input делитель >");
+                string input2 = Console.ReadLine();
+
+                if (input == "q")
+                {
                     break;
                 }
 
-                int k = Int32.Parse(input);
+                int K = Int32.Parse(input);
+                int Divider = Int32.Parse(input2);
 
-                for(int i=1; i <= k; i++)
-                {
-                    sum += i;
-                    multiple *= i;
-                }
+                
+                if(K % Divider == 0 && K/1 != 0)
+                    Console.WriteLine("К-простое число");
+                else 
+                    Console.WriteLine("К-вещественное число");
+
+                Console.ReadKey();
             }
-            Console.WriteLine($"Сумма = {sum}, Произведение = {multiple}");
-            Console.ReadKey();
+            
         }
     }
 }
