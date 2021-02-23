@@ -14,8 +14,7 @@ namespace ConsoleApp1
                     Определяет, К - простое число или нет (делится без остатка только на 1 и на себя)
              */
 
-            int amount = 0;
-            int max = 0;
+            int sum = 0;
 
             while (true)
             {
@@ -25,19 +24,15 @@ namespace ConsoleApp1
                     break;
                 }
 
-                int number = Int32.Parse(input);
-                amount += number;
-                if (max < number) {
-                    max = number;
+                int k = Int32.Parse(input);
+
+                for(int i=1; i <= k; i++)
+                {
+                   sum += i;
                 }
-
-
-                //вывод
             }
-
-            Console.WriteLine($"Amount = {amount}, Max number = {max}");
+            Console.WriteLine($"Сумма = {sum}");
             Console.ReadKey();
-
         }
     }
 }
