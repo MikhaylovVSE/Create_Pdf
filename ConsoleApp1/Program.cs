@@ -16,7 +16,6 @@ namespace ConsoleApp1
 
             while (true)
             {
-              
                 Console.Write("input делимое >");
                 string input = Console.ReadLine();
                 Console.Write("input делитель >");
@@ -25,7 +24,7 @@ namespace ConsoleApp1
                 int K = Int32.Parse(input);
                 int Divider = Int32.Parse(input2);
 
-                if (K % Divider == 0 && K / 1 != 0)
+                if (K % Divider == 0 && K == Divider)
                     Console.WriteLine("К-простое число");
                 else
                     Console.WriteLine("К-вещественное число");
