@@ -16,29 +16,22 @@ namespace ConsoleApp1
 
             while (true)
             {
-                
+              
                 Console.Write("input делимое >");
                 string input = Console.ReadLine();
                 Console.Write("input делитель >");
                 string input2 = Console.ReadLine();
 
-                if (input == "q")
-                {
-                    break;
-                }
-
                 int K = Int32.Parse(input);
                 int Divider = Int32.Parse(input2);
 
-                
-                if(K % Divider == 0 && K/1 != 0)
+                if (K % Divider == 0 && K / 1 != 0)
                     Console.WriteLine("К-простое число");
-                else 
+                else
                     Console.WriteLine("К-вещественное число");
 
-                Console.ReadKey();
+                if (Console.ReadLine() == "q") break;
             }
-            
         }
     }
 }
