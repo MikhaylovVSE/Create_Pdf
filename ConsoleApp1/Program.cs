@@ -15,6 +15,7 @@ namespace ConsoleApp1
              */
 
             int sum = 0;
+            int multiple = 1;
 
             while (true)
             {
@@ -28,10 +29,11 @@ namespace ConsoleApp1
 
                 for(int i=1; i <= k; i++)
                 {
-                   sum += i;
+                    sum += i;
+                    multiple *= i;
                 }
             }
-            Console.WriteLine($"Сумма = {sum}");
+            Console.WriteLine($"Сумма = {sum}, Произведение = {multiple}");
             Console.ReadKey();
         }
     }
