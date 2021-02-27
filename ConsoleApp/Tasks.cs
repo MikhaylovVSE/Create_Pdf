@@ -6,7 +6,6 @@ namespace ConsoleApp
 {
     public class Tasks
     {
-
         public static void Sum()
         {
             /*
@@ -50,21 +49,25 @@ namespace ConsoleApp
 
             while (true)
             {
-                Console.Write("input делимое >");
+                Console.Write("Введите любое число >");
                 string input = Console.ReadLine();
-                Console.Write("input делитель >");
-                string input2 = Console.ReadLine();
 
                 int K = Int32.Parse(input);
-                int Divider = Int32.Parse(input2);
+                int count = 0;
+                for (int i = 1; i <= K; i++)
+                {
+                    if (K % i == 0)
+                        count++;
+                }
 
-                if (K % Divider == 0 && K == Divider)
-                    Console.WriteLine("К-простое число");
+                if (count == 2)
+                    Console.WriteLine($"Число {K} - простое");
                 else
-                    Console.WriteLine("К-вещественное число");
+                    Console.WriteLine($"Число {K} - не простое");
 
                 if (Console.ReadLine() == "q") break;
             }
+
         }
     }
 }
