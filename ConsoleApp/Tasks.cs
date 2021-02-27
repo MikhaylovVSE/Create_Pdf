@@ -6,6 +6,29 @@ namespace ConsoleApp
 {
     public class Tasks
     {
+
+        class Engine
+        {
+            private int sum;
+            private int multiple;
+            public Engine(int k)
+            {
+                sum = 0;
+                multiple = 1;
+                for (int i = 1; i <= k; i++)
+                {
+                    sum += i;
+                    multiple *= i;
+                }
+            }
+            public int getSum() { return sum; }
+            public int getMult() { return multiple;  }
+
+            //"Авто-свойства"
+            //public int Sum { get; set; }
+            //public int Mult { get; set; }
+        }
+
         public static void Sum()
         {
             /*
@@ -15,29 +38,19 @@ namespace ConsoleApp
                     2. Произведение чисел от 1 до К
             */
 
-
-            int sum = 0;
-            int multiple = 1;
-
+            
             while (true)
             {
                 Console.Write("input number >");
                 string input = Console.ReadLine();
-                if (input == "q")
-                {
+                if (input == "q") {
                     break;
                 }
 
-                int k = Int32.Parse(input);
-
-                for (int i = 1; i <= k; i++)
-                {
-                    sum += i;
-                    multiple *= i;
-                }
+                var k = int.Parse(input);
+                var engine = new Engine(k);
+                Console.WriteLine($"Сумма = {engine.getSum()}, Произведение = {engine.getMult()}");
             }
-            Console.WriteLine($"Сумма = {sum}, Произведение = {multiple}");
-            Console.ReadKey();
         }
         public static void IsSimpleNumber()
         {
