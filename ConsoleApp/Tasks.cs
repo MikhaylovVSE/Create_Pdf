@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp
+{
+    public class Tasks
+    {
+
+        public static void Sum()
+        {
+            /*
+                Вводим целое положительное К.
+                Программа считает: 
+                    1. Сумму чисел от 1 до К
+                    2. Произведение чисел от 1 до К
+            */
+
+
+            int sum = 0;
+            int multiple = 1;
+
+            while (true)
+            {
+                Console.Write("input number >");
+                string input = Console.ReadLine();
+                if (input == "q")
+                {
+                    break;
+                }
+
+                int k = Int32.Parse(input);
+
+                for (int i = 1; i <= k; i++)
+                {
+                    sum += i;
+                    multiple *= i;
+                }
+            }
+            Console.WriteLine($"Сумма = {sum}, Произведение = {multiple}");
+            Console.ReadKey();
+        }
+        public static void IsSimpleNumber()
+        {
+            /*
+               Вводим целое положительное К.
+               Программа определяет, К - простое число или нет,
+               то есть делится ли К без остатка только на 1 и на себя
+            */
+
+            while (true)
+            {
+                Console.Write("input делимое >");
+                string input = Console.ReadLine();
+                Console.Write("input делитель >");
+                string input2 = Console.ReadLine();
+
+                int K = Int32.Parse(input);
+                int Divider = Int32.Parse(input2);
+
+                if (K % Divider == 0 && K == Divider)
+                    Console.WriteLine("К-простое число");
+                else
+                    Console.WriteLine("К-вещественное число");
+
+                if (Console.ReadLine() == "q") break;
+            }
+        }
+    }
+}
