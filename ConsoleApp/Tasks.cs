@@ -7,11 +7,11 @@ namespace ConsoleApp
     public class Tasks
     {
 
-        class Engine
+        class SumContainer
         {
             private int sum;
             private int multiple;
-            public Engine(int k)
+            public SumContainer(int k)
             {
                 sum = 0;
                 multiple = 1;
@@ -28,7 +28,6 @@ namespace ConsoleApp
             //public int Sum { get; set; }
             //public int Mult { get; set; }
         }
-
         public static void Sum()
         {
             /*
@@ -48,11 +47,12 @@ namespace ConsoleApp
                 }
 
                 var k = int.Parse(input);
-                var engine = new Engine(k);
+                var engine = new SumContainer(k);
                 Console.WriteLine($"Сумма = {engine.getSum()}, Произведение = {engine.getMult()}");
             }
         }
-        public static void IsSimpleNumber()
+        
+        public static void IsSimple_1()
         {
             /*
                Вводим целое положительное К.
@@ -63,24 +63,43 @@ namespace ConsoleApp
             while (true)
             {
                 Console.Write("Введите любое число >");
-                string input = Console.ReadLine();
-
-                int K = Int32.Parse(input);
-                int count = 0;
-                for (int i = 1; i <= K; i++)
-                {
-                    if (K % i == 0)
-                        count++;
+                var input = Console.ReadLine();
+                if (input == "q") {
+                    break;
                 }
 
-                if (count == 2)
-                    Console.WriteLine($"Число {K} - простое");
-                else
-                    Console.WriteLine($"Число {K} - не простое");
-
-                if (Console.ReadLine() == "q") break;
+                //todo: вынести в отдельный класс
+                int K = int.Parse(input);
+                bool isSimple = true;
+                for (int i = 2; i <= K / 2 + 1; i++)
+                {
+                    if (K % i == 0)
+                    {
+                        isSimple = false;
+                        break;
+                    }
+                }
+                if (isSimple) Console.WriteLine($"Число {K} - простое");
+                else Console.WriteLine($"Число {K} - не простое");
             }
+         
+        }
 
+        public static void IsSimple_2()
+        {
+            /*
+             *      todo:
+                    Задача: разбить число на множители
+                   
+                    Пример 1: 
+                        вводим 12
+                        программа печатает: "12 = 2 * 2 * 3"
+                    
+                    Пример 2: 
+                        вводим 11
+                        программа печатает: "11 - простое число"
+                    
+                */
         }
     }
 }

@@ -7,8 +7,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Tasks.Sum();
-            //Tasks.IsSimpleNumber();
+            //Tasks.Sum();
+            Tasks.IsSimple_1();
         }
     }
 }
